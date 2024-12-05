@@ -18,6 +18,7 @@ COPY . /code
 
 ENV SECRET_KEY "4twE7hzDLtTqH97jOUkr54D6Y1i6LHFAI3rTRgCbfiZJeMiu8A"
 RUN python manage.py collectstatic --noinput
+RUN python manage.py migrate
 
 EXPOSE 8000
 
