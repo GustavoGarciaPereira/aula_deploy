@@ -1,0 +1,22 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desativar Produto | Delete</title>
+    <link rel="stylesheet" href="{% static 'delete.css' %}">
+</head>
+<body>
+    <div class="delete-container">
+        <h1>Confirmar Desativação</h1>
+        <p>Você tem certeza que deseja desativar o produto <strong>{{ produto.nome }}</strong>?</p>
+        <form method="post">
+            {% csrf_token %}
+            <button type="submit" class="btn-delete">Sim, Desativar</button>
+        </form>
+        <a href="{% url 'produto_list' %}" class="btn-cancel">Cancelar</a>
+    </div>
+</body>
+</html>
