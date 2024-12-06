@@ -19,6 +19,7 @@ COPY . /code
 ENV SECRET_KEY "4twE7hzDLtTqH97jOUkr54D6Y1i6LHFAI3rTRgCbfiZJeMiu8A"
 RUN python manage.py collectstatic --noinput
 RUN python manage.py migrate
+RUN DJANGO_SUPERUSER_USERNAME=admin DJANGO_SUPERUSER_EMAIL=admin@example.com DJANGO_SUPERUSER_PASSWORD=1234 python manage.py createsuperuser --noinput
 
 EXPOSE 8000
 
