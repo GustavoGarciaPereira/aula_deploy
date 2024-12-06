@@ -68,7 +68,7 @@ def produto_create(request):
             # Gerar tags com base nos dados do formulário
             nome_produto = produto.nome
             descricao_produto = produto.descricao
-            produto.tags = servico_ia_tags(nome_produto, descricao_produto)
+            produto.tags = ['padrao']#servico_ia_tags(nome_produto, descricao_produto)
             produto.save()
             return redirect('produto_list')
     else:
